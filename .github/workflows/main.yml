@@ -17,4 +17,4 @@ jobs:
           
       - name: Run script
         run: |
-          python ../../say_hi.py
+          python say_hi.py
