@@ -1,7 +1,7 @@
 name: hello_bot
 on:
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '* * * * *'
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
           
       - name: Run script
         run: |
-          python say_hi.py
+          python ../../say_hi.py
