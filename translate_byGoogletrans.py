@@ -22,7 +22,7 @@ for paper in search.results():
 
     summary_ja = str(i)+". "+title_en+"\n"+translator.translate(summary_en,dest='ja').text+"\n"+"---"
 
-    response = client.chat_postMessage(text=summary_ja, channel="#random")
+    response = client.chat_postMessage(text=summary_ja, channel="#todays_paper")
 
     i += 1
 
