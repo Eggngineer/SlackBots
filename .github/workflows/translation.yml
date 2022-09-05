@@ -21,4 +21,4 @@ jobs:
         env: 
           SLACK_API_TOKEN: ${{ secrets.G_TRANS_TOKEN }}
         run: |
-          python translation_byGoogletrans.py
+          python translate_byGoogletrans.py
