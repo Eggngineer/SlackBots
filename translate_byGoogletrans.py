@@ -10,7 +10,7 @@ translator = Translator()
 RANK = 5
 
 search = arxiv.Search(
-  query = "point cloud registration",
+  query = 'abs:"point cloud registration"',
   max_results = RANK,
   sort_by = arxiv.SortCriterion.SubmittedDate
 )
