@@ -1,4 +1,4 @@
-name: housework_bot
+name: hello_bot
 on:
   schedule:
     - cron: '0 21 * * *'
