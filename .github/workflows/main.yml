@@ -1,4 +1,4 @@
-name: hello_bots
+name: hello_bot
 on: [push]
 jobs:
   build:
