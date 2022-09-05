@@ -1,8 +1,5 @@
 name: hello_bot
-on:
-  schedule:
-    - cron: '* * * * *'
-
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
