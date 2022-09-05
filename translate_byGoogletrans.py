@@ -20,7 +20,7 @@ for paper in search.results():
     title_en = paper.title
     summary_en = paper.summary.replace('\n', ' ')
 
-    summary_ja = str(i)+title_en+translator.translate(summary_en,dest='ja').text+"\n"+"---"
+    summary_ja = str(i)+". "+title_en+"\n"+translator.translate(summary_en,dest='ja').text+"\n"+"---"
 
     response = client.chat_postMessage(text=summary_ja, channel="#random")
 
