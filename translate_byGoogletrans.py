@@ -24,7 +24,7 @@ for paper in search.results():
     summary_en = summary_en.replace('\n', ' ')
 
     summary_ja = translator.translate(summary_en,dest='ja').text
-
+    response = client.chat_postMessage(text=summary_ja, channel="#random")
     print(i,'.'+'"'+title_en+'"')
     print(summary_ja)
     print("---")
