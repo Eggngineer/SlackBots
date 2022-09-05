@@ -18,16 +18,11 @@ search = arxiv.Search(
 i=1
 for paper in search.results():
     title_en = paper.title
-    summary_en = paper.summary
-    
-    title_en = title_en.replace('\n', ' ')
-    summary_en = summary_en.replace('\n', ' ')
+    summary_en = paper.summary.replace('\n', ' ')
 
-    summary_ja = translator.translate(summary_en,dest='ja').text
+    summary_ja = str(i)+title_en+translator.translate(summary_en,dest='ja').text+"\n"+"---"
+
     response = client.chat_postMessage(text=summary_ja, channel="#random")
-    print(i,'.'+'"'+title_en+'"')
-    print(summary_ja)
-    print("---")
 
     i += 1
 
