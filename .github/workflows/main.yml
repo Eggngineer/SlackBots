@@ -1,5 +1,7 @@
 name: hello_bots
 on: [push]
+env: 
+  SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
