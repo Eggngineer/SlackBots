@@ -16,5 +16,7 @@ jobs:
           pip install slack-sdk
           
       - name: Run script
+        env: 
+          SLACK_API_TOKEN: ${{ secret.SLACK_API_TOKEN }}
         run: |
           python say_hi.py
