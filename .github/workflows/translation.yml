@@ -19,6 +19,6 @@ jobs:
           
       - name: Run script
         env: 
-          SLACK_API_TOKEN: ${{ secrets.G_TRANS_TOKEN }}
+          G_TRANS_TOKEN: ${{ secrets.G_TRANS_TOKEN }}
         run: |
           python translate_byGoogletrans.py
