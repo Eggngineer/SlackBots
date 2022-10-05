@@ -21,7 +21,7 @@ for paper in search.results():
     summary_en = paper.summary.replace('\n', ' ')
     url = paper.pdf_url
 
-    summary_ja = str(i)+". "+title_en+"\n"+translator.translate(summary_en,dest='ja').text+"\n"+url+"---"
+    summary_ja = str(i)+". "+title_en+"\n"+translator.translate(summary_en,dest='ja').text+"\n"+url+"\n---"
 
     response = client.chat_postMessage(text=summary_ja, channel="#todays_paper")
 
