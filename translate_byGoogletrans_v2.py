@@ -41,9 +41,10 @@ def format_summary(summary: str) -> str:
 
 def main() -> None:
     translator = _init_translator()
+    client = _init_client()
     info = search_arXiv(keyward='point cloud',rankMax=5)
 
-    for paper in info.results():
+    for rank, paper in enumerate(info.results()):
         paper_info = {
             "title_en": paper.title,
             "title_ja": translator.translate(text=paper.title, dest="ja").text,
@@ -54,13 +55,23 @@ def main() -> None:
         paper_info["summary_ja"] = translator.translate(
             text=paper_info["summary_en"], dest="ja"
         ).text
+        paper_info['url'] = paper.pdf_url
 
-        print(f'{paper_info["title_en"]} ( {paper_info["title_ja"]} )')
-        print('"""\n')
-        print(paper_info["summary_en"])
-        print('"""\n')
-        print(paper_info["summary_ja"])
-        print('"""')
+        content = f"""
+> {rank+1}.  <{paper_info['url']}|{paper_info['title_en']}> ( {paper_info['title_ja']} )
+
+```
+{paper_info['summary_ja']}
+```
+
+        """
+
+        _ = client.chat_postMessage(
+            text=content,
+            channel="#todays_paper",
+        )
+
+
 
 
 if __name__ == "__main__":
