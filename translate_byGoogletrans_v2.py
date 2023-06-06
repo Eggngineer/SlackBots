@@ -42,7 +42,7 @@ def format_summary(summary: str) -> str:
 def main() -> None:
     translator = _init_translator()
     client = _init_client()
-    info = search_arXiv(keyward='point cloud',rankMax=5)
+    info = search_arXiv(keyward='Point Cloud',rankMax=5)
 
     for rank, paper in enumerate(info.results()):
         paper_info = {

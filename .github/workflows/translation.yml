@@ -1,7 +1,5 @@
 name: trans_bot
 on:
-  push:
-    - main
   schedule:
     - cron: '0 21 * * *'
 jobs:
