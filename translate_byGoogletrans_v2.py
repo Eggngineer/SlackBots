@@ -10,12 +10,12 @@ def _init_translator() -> Translator:
 
 
 def _init_client() -> WebClient:
-    token = os.environ["G_TRANS_TOKEN"]
+    token = os.environ["YMSN_SLACK_TOKEN"]
 
     return WebClient(token=token)
 
 
-def search_arXiv(keyward: str=None, rankMax: int=None) -> arxiv.Search:
+def search_arXiv(keyward: str = None, rankMax: int = None) -> arxiv.Search:
     if keyward is None:
         keyward = input("Search for: ")
     if rankMax is None:
@@ -42,7 +42,7 @@ def format_summary(summary: str) -> str:
 def main() -> None:
     translator = _init_translator()
     client = _init_client()
-    info = search_arXiv(keyward='Point Cloud',rankMax=5)
+    info = search_arXiv(keyward="Point Cloud", rankMax=5)
 
     for rank, paper in enumerate(info.results()):
         paper_info = {
@@ -55,7 +55,7 @@ def main() -> None:
         paper_info["summary_ja"] = translator.translate(
             text=paper_info["summary_en"], dest="ja"
         ).text
-        paper_info['url'] = paper.pdf_url
+        paper_info["url"] = paper.pdf_url
 
         content = f"""
 > {rank+1}.  <{paper_info['url']}|{paper_info['title_en']}> ( {paper_info['title_ja']} )
@@ -70,8 +70,6 @@ def main() -> None:
             text=content,
             channel="#todays_paper",
         )
-
-
 
 
 if __name__ == "__main__":
