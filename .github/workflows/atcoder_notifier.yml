@@ -21,6 +21,6 @@ jobs:
 
       - name: Run script
         env:
-          G_TRANS_TOKEN: ${{ secrets.ATCODER_NOTIFIER_TOKEN }}
+          ATCODER_NOTIFIER_TOKEN: ${{ secrets.ATCODER_NOTIFIER_TOKEN }}
         run: |
           python AtCoderNotifier.py
