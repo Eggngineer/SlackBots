@@ -24,3 +24,4 @@ jobs:
           ATCODER_NOTIFIER_TOKEN: ${{ secrets.ATCODER_NOTIFIER_TOKEN }}
         run: |
           python AtCoderNotifier.py
+
