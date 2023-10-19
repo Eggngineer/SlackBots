@@ -1,4 +1,4 @@
-name: trans_bot
+name: atcoder_notifier
 on:
   [push]
   # schedule:
