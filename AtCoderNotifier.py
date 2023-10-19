@@ -136,8 +136,6 @@ class SlackBot:
             mrkdwn=True,
         )
 
-        print(ret)
-
 
 if __name__ == '__main__':
     bot = SlackBot(token=os.environ["ATCODER_NOTIFIER_TOKEN"])
