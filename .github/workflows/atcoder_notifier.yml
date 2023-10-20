@@ -2,7 +2,7 @@ name: atcoder_notifier
 on:
   push:
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: '0 0 * * 1,6'
 jobs:
   build:
     runs-on: ubuntu-latest
