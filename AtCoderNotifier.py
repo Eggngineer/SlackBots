@@ -132,11 +132,12 @@ class SlackBot:
 
         ret = self.client.chat_postMessage(
             text=header + content,
-            channel='#notification',
+            channel='#コンテスト通知',
             mrkdwn=True,
         )
+        return ret
 
 
 if __name__ == '__main__':
     bot = SlackBot(token=os.environ["ATCODER_NOTIFIER_TOKEN"])
-    bot.alert_in_slack_channel()
+    _ = bot.alert_in_slack_channel()
