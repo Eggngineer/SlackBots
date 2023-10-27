@@ -1,4 +1,4 @@
-import os
+
 
 import arxiv
 from googletrans import Translator
@@ -10,7 +10,7 @@ def _init_translator() -> Translator:
 
 
 def _init_client() -> WebClient:
-    token = os.environ["YMSN_SLACK_TOKEN"]
+    token = os.environ["G_TRANS_TOKEN"]
 
     return WebClient(token=token)
 
